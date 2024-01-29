@@ -1,0 +1,23 @@
+.container {
+  width: 95%;
+  margin: 5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container p {
+  font-size: 1.4rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 4rem;
+  height: 1.6rem;
+}

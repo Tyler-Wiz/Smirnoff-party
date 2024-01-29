@@ -1,0 +1,50 @@
+.container {
+  width: 95%;
+  margin: 2rem auto;
+}
+
+.container input {
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.container label {
+  font-size: 1.2rem;
+  margin-left: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.container span {
+  display: block;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  color: var(--button);
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.buttonContainer button {
+  width: 80%;
+  margin-top: 3rem;
+  border: none;
+  background-color: var(--button);
+  color: white;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}

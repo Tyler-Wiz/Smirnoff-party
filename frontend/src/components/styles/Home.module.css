@@ -1,0 +1,59 @@
+/* about section */
+.aboutContainer {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+.aboutContainer p {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.aboutContainer span {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Agree to Image Rights checkbox */
+.checkboxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkBox label {
+  font-size: 1.3rem;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+.checkboxContainer p {
+  font-size: 1.3rem;
+  color: var(--button);
+  margin: 2rem 0;
+}
+
+/* Image Right & Data Privacy */
+
+.termsContainer {
+  width: 95%;
+  margin: 4rem auto;
+}
+
+.termsContainer p {
+  font-size: 1.6rem;
+}
+
+.termsContainer h3 {
+  font-size: 1.6rem;
+  margin: 4rem 0 0;
+  font-weight: 700;
+}
