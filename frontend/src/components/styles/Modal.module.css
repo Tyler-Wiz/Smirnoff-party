@@ -1,0 +1,61 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  width: 95%;
+  height: 30%;
+}
+
+.modal h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.modal input {
+  outline: none;
+  border: none;
+  width: 50%;
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--textHighlight);
+  text-align: center;
+}
+.modal button {
+  border: none;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  background-color: var(--button);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
