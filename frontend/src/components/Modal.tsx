@@ -35,7 +35,12 @@ const Modal = () => {
       {isModalOpen && (
         <div className={styles.container}>
           <div className={styles.modal}>
-            <Image src={logo} alt="smirnoff logo" width={100} />
+            <Image
+              src="/logo.png"
+              alt="smirnoff logo"
+              width={100}
+              height={30}
+            />
             <h3 className="uppercase text-3xl">Are You 18 Or Older?</h3>
             <div className="flex flex-col text-center gap-3">
               <p className="capitalize text-sm">Enter your age:</p>

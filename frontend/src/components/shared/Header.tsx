@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
 import bannerAd from "@/assets/leader.png";
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
@@ -11,7 +10,7 @@ const Header = () => {
       <nav className={styles.navContainer}>
         <Link href={"/"}>
           <div className={styles.logoContainer}>
-            <Image src={logo} alt="smirnoff logo" fill />
+            <Image src="/logo.png" alt="smirnoff logo" fill />
           </div>
         </Link>
         <h2>NKA 3.0</h2>
