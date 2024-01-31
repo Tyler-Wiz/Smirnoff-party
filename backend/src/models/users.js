@@ -1,12 +1,12 @@
-const db = require("./index");
+const db = require("../../config/index");
 
 class UserModel {
   // Create new user
-  async create(name, email) {
+  static async create(name, email, instagram) {
     try {
       // Generate SQL statement
-      const statement = `INSERT INTO users(name,email) VALUES ($1, $2) RETURNING *`;
-      const values = [name, email];
+      const statement = `INSERT INTO users(name,email,instagram) VALUES ($1, $2, $3) RETURNING *`;
+      const values = [name, email, instagram];
       // Send SQL Statement to Database and Await Response
       const result = await db.query(statement, values);
       // Check and return new user added
@@ -19,7 +19,7 @@ class UserModel {
       throw new Error(error);
     }
   }
-  async createAdmin(name, email, is_admin) {
+  static async createAdmin(name, email, is_admin) {
     try {
       // Generate SQL statement
       const statement = `INSERT INTO users(name,email,is_admin) VALUES ($1, $2, $3) RETURNING *`;
@@ -36,7 +36,7 @@ class UserModel {
       throw new Error(error);
     }
   }
-  async findOneByEmail(email) {
+  static async findOneByEmail(email) {
     try {
       // Generate SQL statement
       const statement = `SELECT * FROM users WHERE email = $1`;
@@ -53,7 +53,7 @@ class UserModel {
     }
   }
 
-  async findManyByDay(since) {
+  static async findManyByDay(since) {
     try {
       // Generate SQL statement
       const statement = `SELECT u.name, u.email
@@ -73,7 +73,7 @@ class UserModel {
     }
   }
 
-  async findMany() {
+  static async findMany() {
     try {
       // Generate SQL statement
       const statement = `SELECT u.name, u.email
@@ -93,4 +93,4 @@ class UserModel {
   }
 }
 
-module.exports = new UserModel();
+module.exports = UserModel;

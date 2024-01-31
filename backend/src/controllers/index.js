@@ -9,7 +9,7 @@ const {
 const moment = require("moment");
 
 exports.create = async (req, res, next) => {
-  const { name, email } = req.body;
+  const { name, email, instagram } = req.body;
   try {
     // Validate user Input
     validateUserInput(req.body);
@@ -17,7 +17,7 @@ exports.create = async (req, res, next) => {
     const user = await UserModel.findOneByEmail(email);
     if (user) throw createError(409, "Email already in use");
     // Create user in Database
-    const response = await UserModel.create(name, email);
+    const response = await UserModel.create(name, email, instagram);
     // Send Success Email After user added to Database
     if (response) {
       const mail = await sendEmail(name, email);

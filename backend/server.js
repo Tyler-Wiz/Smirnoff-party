@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
-const { errorHandler } = require("./utils/errorHandler");
+const { errorHandler } = require("./src/utils/errorHandler");
 const PORT = process.env.PORT;
 
 const corsOptions = {
@@ -15,8 +15,8 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const Auth = require("./routes/auth");
-const Users = require("./routes/users");
+const Auth = require("./src/routes/auth");
+const Users = require("./src/routes/users");
 app.use("/auth", Auth);
 app.use("/users", Users);
 

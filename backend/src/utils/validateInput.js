@@ -4,6 +4,7 @@ const createError = require("http-errors");
 const validateUserInput = (data) => {
   const schema = joi.object({
     name: joi.string().min(3).max(40).required(),
+    instagram: joi.string().min(3).max(40).required(),
     email: joi
       .string()
       .min(6)
