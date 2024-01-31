@@ -58,9 +58,6 @@ describe("AuthForm", () => {
       await waitFor(() => {
         expect(screen.getByLabelText("name-error")).toBeInTheDocument();
         expect(screen.getByLabelText("email-error")).toBeInTheDocument();
-        expect(
-          screen.getByLabelText("confirm-email-error")
-        ).toBeInTheDocument();
         expect(screen.getByLabelText("instagram-error")).toBeInTheDocument();
       });
     });

@@ -1,11 +1,13 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useState } from "react";
 import Input from "../shared/Input";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registerSchema } from "@/validator/RegisterSchema";
+import { useRouter } from "next/navigation";
 import styles from "@/components/styles/AuthForm.module.css";
+import axios from "axios";
 
 interface FormData {
   name: string;
@@ -20,6 +22,9 @@ interface AuthFormProps {
 }
 
 const AuthForm: FC<AuthFormProps> = ({ setSubmitError, agreeTerms }) => {
+  const [serverError, setServerError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -28,13 +33,27 @@ const AuthForm: FC<AuthFormProps> = ({ setSubmitError, agreeTerms }) => {
     resolver: yupResolver(registerSchema),
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData, e: any) => {
     delete data.confirmEmail;
-    if (!agreeTerms) {
-      setSubmitError("You must agree to the terms and conditions");
-      return;
+    try {
+      setLoading(true);
+      if (!agreeTerms) {
+        setSubmitError("You must agree to the terms and conditions");
+        setLoading(false);
+        return;
+      } else {
+        setSubmitError("");
+      }
+      const res = await axios.post(`http://localhost:4000/auth/register`, data);
+      if (res.status === 200) {
+        setLoading(false);
+        router.push("/success");
+        e.target.reset();
+      }
+    } catch (error: any) {
+      setLoading(false);
+      setServerError(error.response.data.errorMessage);
     }
-    console.log(data);
   };
 
   return (
@@ -78,8 +97,9 @@ const AuthForm: FC<AuthFormProps> = ({ setSubmitError, agreeTerms }) => {
         error={errors.instagram?.message}
         errorLabel="instagram-error"
       />
+      {serverError && <p className={styles.error}>{serverError}</p>}
       <div className={styles.buttonContainer}>
-        <button type="submit">Book Now</button>
+        <button type="submit">{loading ? "Loading..." : "Book Now"}</button>
       </div>
     </form>
   );

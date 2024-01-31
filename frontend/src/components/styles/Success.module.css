@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 65vh;
+}
+
+.container h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 4rem 0 1rem 0;
+  color: var(--button);
+}
+
+.container p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--button);
+}

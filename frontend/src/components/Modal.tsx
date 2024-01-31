@@ -6,9 +6,9 @@ import Image from "next/image";
 import styles from "@/components/styles/Modal.module.css";
 
 const Modal = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-  const [userAge, setUserAge] = useState("");
-  const [accessGranted, setAccessGranted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [userAge, setUserAge] = useState<string>("");
+  const [accessGranted, setAccessGranted] = useState<boolean>(false);
 
   const handleAgeInputChange = (e: any) => {
     setUserAge(e.target.value);
@@ -24,7 +24,7 @@ const Modal = () => {
   };
 
   useEffect(() => {
-    setIsModalOpen(false);
+    setIsModalOpen(true);
     if (accessGranted) {
       setIsModalOpen(false);
     }

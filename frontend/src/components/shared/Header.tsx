@@ -19,7 +19,6 @@ const Header = () => {
       <div className={styles.bannerContainer}>
         <Image src={bannerAd} alt="banner" fill />
       </div>
-      <h3>Book Your Flight</h3>
     </header>
   );
 };

@@ -15,16 +15,6 @@
 .container h2 {
   font-size: 1.8rem;
 }
-
-.container h3 {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: var(--textHighlight);
-  text-align: center;
-  font-weight: 800;
-  margin: 3rem 0;
-  letter-spacing: 0.1rem;
-}
 .bannerContainer {
   position: relative;
   width: 100%;
