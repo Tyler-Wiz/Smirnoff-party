@@ -36,7 +36,7 @@ const Modal = () => {
         <div className={styles.container}>
           <div className={styles.modal}>
             <Image
-              src="/logo.png"
+              src="https://tooxclusive.com/wp-content/uploads/2024/01/logo.png"
               alt="smirnoff logo"
               width={100}
               height={30}

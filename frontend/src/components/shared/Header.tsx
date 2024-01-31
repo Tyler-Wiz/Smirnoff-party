@@ -10,7 +10,11 @@ const Header = () => {
       <nav className={styles.navContainer}>
         <Link href={"/"}>
           <div className={styles.logoContainer}>
-            <Image src="/logo.png" alt="smirnoff logo" fill />
+            <Image
+              src="https://tooxclusive.com/wp-content/uploads/2024/01/logo.png"
+              alt="smirnoff logo"
+              fill
+            />
           </div>
         </Link>
         <h2>NKA 3.0</h2>
