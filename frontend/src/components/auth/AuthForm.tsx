@@ -44,7 +44,10 @@ const AuthForm: FC<AuthFormProps> = ({ setSubmitError, agreeTerms }) => {
       } else {
         setSubmitError("");
       }
-      const res = await axios.post(`http://localhost:4000/auth/register`, data);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}auth/register`,
+        data
+      );
       if (res.status === 200) {
         setLoading(false);
         router.push("/success");
